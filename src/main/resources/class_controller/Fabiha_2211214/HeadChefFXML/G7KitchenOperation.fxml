@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Fabiha_2211214.HeadChef.KitchenOperationsController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Kitchen Operations Monitoring" />
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Active Orders Queue" style="-fx-font-weight: bold;"/>
+            <TableView fx:id="activeOrdersTableView" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="orderIdColumn" text="ID"/>
+                    <TableColumn fx:id="dishNameColumn" text="Dish"/>
+                    <TableColumn fx:id="timePlacedColumn" text="Time Placed"/>
+                    <TableColumn fx:id="expectedDeliveryColumn" text="Exp. Delivery"/>
+                    <TableColumn fx:id="statusColumn" text="Status"/>
+                </columns>
+                <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+            </TableView>
+        </VBox>
+        <VBox spacing="10" prefWidth="300" style="-fx-border-color: #ccc; -fx-padding: 10; -fx-border-radius: 5;">
+            <Label text="Order Progress Control" style="-fx-font-weight: bold;"/>
+            <Label fx:id="selectedOrderIdLabel" text="Order ID: -"/>
+            <Label fx:id="selectedDishLabel" text="Dish: -"/>
+            <ProgressBar fx:id="cookingProgressBar" progress="0.0" prefWidth="280"/>
+            <Label fx:id="progressStatusLabel" text="Waiting..."/>
+            <Separator/>
+            <ComboBox fx:id="stageUpdateComboBox" promptText="Select Stage" prefWidth="280"/>
+            <Button text="Update Progress" onAction="#handleUpdateProgressONA" prefWidth="280" style="-fx-background-color: #e67e22; -fx-text-fill: white;"/>
+        </VBox>
+    </HBox>
+    <HBox spacing="20" prefHeight="300" VBox.vgrow="ALWAYS">
+        <BarChart fx:id="dishesCookingBarChart" title="Dishes Cooking" HBox.hgrow="ALWAYS">
+            <xAxis><CategoryAxis label="Dish"/></xAxis>
+            <yAxis><NumberAxis label="Qty"/></yAxis>
+        </BarChart>
+        <LineChart fx:id="prepTimeLineChart" title="Prep Time Trends" HBox.hgrow="ALWAYS">
+            <xAxis><CategoryAxis label="Time"/></xAxis>
+            <yAxis><NumberAxis label="Mins"/></yAxis>
+        </LineChart>
+    </HBox>
+</VBox>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="320.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Marzana_2432038.StoreManager.PerformanceSummaryController">
+
+    <children>
+        <Label layoutX="135.0" layoutY="15.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Store Performance Summary" />
+        <TableView fx:id="performanceTableView" layoutX="25.0" layoutY="50.0" prefHeight="150.0" prefWidth="470.0">
+            <columns>
+                <TableColumn fx:id="totalSalesTC" prefWidth="150.0" text="Total Sales" />
+                <TableColumn fx:id="averageRatingTC" prefWidth="150.0" text="Average Rating" />
+                <TableColumn fx:id="attendancePercentageTC" prefWidth="170.0" text="Attendance %" />
+            </columns>
+        </TableView>
+        <Label fx:id="messageLabel" layoutX="25.0" layoutY="210.0" prefWidth="470.0" />
+        <Label layoutX="26.0" layoutY="210.0" text="Total Sales:" />
+        <TextField fx:id="totalSalesTF" layoutX="112.0" layoutY="205.0" prefWidth="80.0" />
+        <Label layoutX="25.0" layoutY="256.0" text="Average Rating:" />
+        <TextField fx:id="averageRatingTF" layoutX="135.0" layoutY="251.0" prefWidth="60.0" />
+        <Label layoutX="234.0" layoutY="209.0" text="Attendance %:" />
+        <TextField fx:id="attendancePercentageTF" layoutX="345.0" layoutY="205.0" prefWidth="80.0" />
+        <Button layoutX="235.0" layoutY="251.0" onAction="#handleSaveSummaryOA" prefHeight="32.0" prefWidth="181.0" text="Save / Refresh Summary" />
+    </children>
+</AnchorPane>

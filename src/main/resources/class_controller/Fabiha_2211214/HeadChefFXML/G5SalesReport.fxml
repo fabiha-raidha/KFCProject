@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Fabiha_2211214.HeadChef.SalesReportController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Sales Report &amp; Analytics" />
+
+    <HBox spacing="10.0" alignment="CENTER_LEFT" style="-fx-border-color: #ddd; -fx-padding: 10; -fx-border-radius: 5;">
+        <Label text="Criteria:" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="branchNameTextField" promptText="Branch Name"/>
+        <DatePicker fx:id="startDatePicker" promptText="Start Date"/>
+        <ComboBox fx:id="durationComboBox" promptText="Duration"/>
+        <Button text="Generate Report" onAction="#handleGenerateReportONA" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+    </HBox>
+    <TableView fx:id="salesTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="productNameColumn" text="Product"/>
+            <TableColumn fx:id="quantityAvailableColumn" text="Avail. Qty"/>
+            <TableColumn fx:id="totalDeliveredColumn" text="Delivered"/>
+            <TableColumn fx:id="soldQuantityColumn" text="Sold"/>
+            <TableColumn fx:id="unitPriceColumn" text="Unit Price"/>
+            <TableColumn fx:id="revenueColumn" text="Revenue"/>
+            <TableColumn fx:id="targetRevenueColumn" text="Target"/>
+            <TableColumn fx:id="percentSaleColumn" text="Percent Sale"/>
+        </columns>
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+    </TableView>
+    <HBox spacing="20" alignment="CENTER_RIGHT">
+        <Label fx:id="totalRevenueLabel" text="Total Revenue: $0.00" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <Button text="Download PDF" onAction="#handleDownloadPdfONA" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>

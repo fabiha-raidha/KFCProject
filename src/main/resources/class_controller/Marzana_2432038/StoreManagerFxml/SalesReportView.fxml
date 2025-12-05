@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="614.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Marzana_2432038.StoreManager.SalesReportController">
+    <children>
+        <VBox spacing="8.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="69.0" prefWidth="940.0" spacing="8.0">
+                <Label text="Branch:" />
+                <TextField fx:id="branchField" prefWidth="140" promptText="Branch name" />
+                <Label text="Start:" />
+                <DatePicker fx:id="startDate" />
+                <Label text="End:" />
+                <DatePicker fx:id="endDate" />
+                <Button fx:id="loadButton" onAction="#onLoad" text="Load" />
+            </HBox>
+            <TableView fx:id="salesTable" prefHeight="298.0" prefWidth="744.0" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="itemCol" prefWidth="180" text="Product" />
+                    <TableColumn fx:id="qtyAvailableCol" prefWidth="116.7999267578125" text="Qty Available" />
+                    <TableColumn fx:id="totalDeliveredCol" prefWidth="120.0" text="Total Delivered" />
+                    <TableColumn fx:id="soldCol" prefWidth="59.199951171875" text="Sold" />
+                    <TableColumn fx:id="unitPriceCol" prefWidth="86.39999389648438" text="Unit Price" />
+                    <TableColumn fx:id="revenueCol" prefWidth="79.9998779296875" text="Revenue" />
+                    <TableColumn fx:id="targetRevenueCol" prefWidth="124.800048828125" text="Target Revenue" />
+                    <TableColumn fx:id="pctCol" prefWidth="110.4000244140625" text="% of Total" />
+                </columns>
+            </TableView>
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                <Region HBox.hgrow="ALWAYS" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

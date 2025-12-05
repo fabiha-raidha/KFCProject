@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Fabiha_2211214.CMO.CMOOverviewController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Marketing Performance Overview" />
+    <HBox spacing="20.0">
+        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" text="Active Campaigns" />
+            <Label fx:id="activeCampaignsLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2980b9;" text="0" />
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" text="Budget Utilized (BDT)" />
+            <Label fx:id="budgetLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #8e44ad;" text="0.00" />
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" text="Avg. Customer Rating" />
+            <Label fx:id="ratingLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #f1c40f;" text="0.0" />
+        </VBox>
+    </HBox>
+    <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+        <BarChart fx:id="campaignRoiChart" title="Campaign ROI" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 5;">
+            <xAxis>
+                <CategoryAxis label="Campaign" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="ROI (%)" />
+            </yAxis>
+        </BarChart>
+        <LineChart fx:id="salesTrendChart" title="Sales vs Ad Spend" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 5;">
+            <xAxis>
+                <CategoryAxis label="Month" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Amount (BDT)" />
+            </yAxis>
+        </LineChart>
+    </HBox>
+</VBox>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="15.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Fabiha_2211214.CMO.CustomerSentimentController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Customer Insights &amp; Sentiment Analysis" />
+    <HBox spacing="20.0">
+        <VBox alignment="CENTER" prefHeight="90.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" text="Average Sentiment Score" />
+            <Label fx:id="avgSentimentLabel" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" text="0.0" />
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="90.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" text="Total Reviews Analyzed" />
+            <Label fx:id="totalReviewsLabel" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2980b9;" text="0" />
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="90.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" text="Negative Feedback" />
+            <Label fx:id="negativeCountLabel" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #c0392b;" text="0" />
+        </VBox>
+    </HBox>
+    <HBox prefHeight="280.0" spacing="20.0">
+        <PieChart fx:id="sentimentPieChart" style="-fx-background-color: white; -fx-background-radius: 5;" title="Sentiment Distribution" HBox.hgrow="ALWAYS" />
+        <BarChart fx:id="complaintsChart" style="-fx-background-color: white; -fx-background-radius: 5;" title="Top Complaints vs Praises" HBox.hgrow="ALWAYS">
+            <xAxis>
+                <CategoryAxis label="Category" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Count" />
+            </yAxis>
+        </BarChart>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: white; -fx-padding: 10; -fx-background-radius: 5;">
+        <Label style="-fx-font-weight: bold;" text="Filter Feedback:" />
+        <ComboBox fx:id="ratingFilterComboBox" prefWidth="150.0" promptText="Select Rating" />
+        <ComboBox fx:id="regionFilterComboBox" prefWidth="150.0" promptText="Select Region" />
+        <Button onAction="#handleApplyFilterONA" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Apply Filter" />
+        <Button onAction="#handleResetFilterONA" text="Reset" />
+        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS" />
+    </HBox>
+    <TableView fx:id="feedbackTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="80.0" text="ID" />
+            <TableColumn fx:id="customerColumn" prefWidth="150.0" text="Customer" />
+            <TableColumn fx:id="regionColumn" prefWidth="100.0" text="Region" />
+            <TableColumn fx:id="ratingColumn" prefWidth="60.0" text="Rating" />
+            <TableColumn fx:id="sentimentColumn" prefWidth="100.0" text="Sentiment" />
+            <TableColumn fx:id="commentColumn" prefWidth="300.0" text="Comment" />
+            <TableColumn fx:id="dateColumn" prefWidth="100.0" text="Date" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+</VBox>

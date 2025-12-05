@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="cmoBorderPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Fabiha_2211214.CMO.CMODashboardController">
+    <left>
+        <VBox alignment="TOP_CENTER" prefWidth="240.0" spacing="15.0" style="-fx-background-color: #2c3e50;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="50.0" />
+            </padding>
+            <children>
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" text="CMO Menu" />
+                <Button onAction="#overviewONA" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;" text="Dashboard Overview" />
+                <Button onAction="#marketTrendsONA" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;" text="Market Trends &amp; Research" />
+                <Button onAction="#campaignManagementONA" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;" text="Campaign Management" />
+                <Button onAction="#customerFeedbackONA" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;" text="Customer Feedback" />
+                <Button onAction="#promotionsONA" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;" text="Promotions &amp; Events" />
+                <Button onAction="#budgetManagementONA" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;" text="Budget &amp; ROI Tracking" />
+                <Button onAction="#salesAnalyticsONA" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;" text="Sales &amp; Perf. Analytics" />
+                <Button onAction="#digitalMediaONA" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;" text="Digital Media / Social" />
+                <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" />
+                    </padding>
+                    <children>
+                        <Button onAction="#logoutONA" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Log Out" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane style="-fx-background-color: #ecf0f1;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #34495e;" text="Welcome, Chief Marketing Officer" />
+                <Label layoutX="20.0" layoutY="60.0" style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" text="Select an option from the left menu to start." />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

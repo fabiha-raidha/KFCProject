@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Fabiha_2211214.HeadChef.HeadChefOverviewController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Kitchen Performance Overview" />
+    <HBox spacing="20.0">
+        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" text="Active Orders" />
+            <Label fx:id="activeOrdersLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #e67e22;" text="0" />
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" text="Staff On Duty" />
+            <Label fx:id="staffOnDutyLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" text="0/0" />
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" text="Low Stock Alerts" />
+            <Label fx:id="lowStockLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #c0392b;" text="0" />
+        </VBox>
+    </HBox>
+    <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+        <LineChart fx:id="orderTrafficChart" title="Hourly Order Traffic" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 5;">
+            <xAxis>
+                <CategoryAxis label="Time" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Orders" />
+            </yAxis>
+        </LineChart>
+        <BarChart fx:id="topDishesChart" title="Top Selling Dishes" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 5;">
+            <xAxis>
+                <CategoryAxis label="Dish" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Quantity" />
+            </yAxis>
+        </BarChart>
+    </HBox>
+</VBox>

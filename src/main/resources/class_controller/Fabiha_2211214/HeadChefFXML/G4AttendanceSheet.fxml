@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Fabiha_2211214.HeadChef.AttendanceController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Worker Attendance" />
+
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+        <ComboBox fx:id="durationComboBox" promptText="Duration" prefWidth="150"/>
+        <TextField fx:id="employeeSearchTextField" promptText="Search Employee" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="lineSearchTextField" promptText="Line/Section"/>
+        <Button text="View" onAction="#handleFetchAttendanceONA" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+    </HBox>
+    <TableView fx:id="attendanceTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="employeeIdColumn" text="ID" prefWidth="80"/>
+            <TableColumn fx:id="workerNameColumn" text="Name" prefWidth="200"/>
+            <TableColumn fx:id="workLineColumn" text="Line" prefWidth="120"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+            <TableColumn fx:id="dateColumn" text="Date/Time" prefWidth="150"/>
+        </columns>
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+    </TableView>
+    <Label fx:id="statusLabel" text="Ready."/>
+</VBox>

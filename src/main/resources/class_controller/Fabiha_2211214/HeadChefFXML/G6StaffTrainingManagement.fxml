@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="class_controller.Fabiha_2211214.HeadChef.StaffTrainingController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Staff Training &amp; Performance" />
+
+    <Label text="Training Programs Schedule" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="trainingTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="trainingIdColumn" text="ID"/>
+            <TableColumn fx:id="trainingTitleColumn" text="Title"/>
+            <TableColumn fx:id="trainingTypeColumn" text="Type"/>
+            <TableColumn fx:id="durationColumn" text="Duration"/>
+            <TableColumn fx:id="lastSessionDateColumn" text="Last Session"/>
+            <TableColumn fx:id="participantsColumn" text="Participants"/>
+        </columns>
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+    </TableView>
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #f9f9f9; -fx-padding: 10;">
+        <TextField fx:id="trainingTitleTextField" promptText="Title" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="trainerNameTextField" promptText="Trainer"/>
+        <TextField fx:id="requiredStaffTextField" promptText="Required Staff"/>
+        <DatePicker fx:id="trainingDatePicker"/>
+        <Button text="Schedule" onAction="#handleScheduleTrainingONA" style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+    </HBox>
+    <Label text="Staff Performance Records" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="performanceTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="staffIdColumn" text="Staff ID"/>
+            <TableColumn fx:id="staffNameColumn" text="Name"/>
+            <TableColumn fx:id="attendanceColumn" text="Attendance %"/>
+            <TableColumn fx:id="skillRatingColumn" text="Skill Rating"/>
+            <TableColumn fx:id="trainingProgressColumn" text="Progress"/>
+        </columns>
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+    </TableView>
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="targetStaffIdTextField" promptText="Staff ID" prefWidth="100"/>
+        <TextField fx:id="newRatingTextField" promptText="Rating (1-10)" prefWidth="100"/>
+        <TextField fx:id="progressNoteTextField" promptText="Note" HBox.hgrow="ALWAYS"/>
+        <Button text="Update Record" onAction="#handleUpdatePerformanceONA" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>
